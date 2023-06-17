@@ -1,1 +1,44 @@
 IDI_ICON1 ICON DISCARDABLE "LC2.ICO"
+
+#include <winver.h>
+#include <ntdef.h>
+
+#ifdef RC_INVOKED
+
+//
+// Set up debug information
+//
+#if DBG
+#define VER_DBG VS_FF_DEBUG
+#else
+#define VER_DBG 0
+#endif
+
+// ------- version info -------------------------------------------------------
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION             1,0,0,0
+PRODUCTVERSION          1,0,0,0
+FILEFLAGSMASK           VS_FFI_FILEFLAGSMASK
+FILEFLAGS               VER_DBG
+FILEOS                  VOS_NT
+FILETYPE                VFT_DRV
+FILESUBTYPE             VFT2_DRV_SYSTEM
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904b0"
+        BEGIN
+		VALUE "FileDescription",  "Lara Croft and the Temple of Osiris"
+		VALUE "FileVersion",      "1.1.240.4"
+		VALUE "LegalCopyright",   "Copyright (C) 2014 Square Enix Ltd."
+		VALUE "ProductName",      "Lara Croft and the Temple of Osiris"
+		VALUE "ProductVersion",	  "1.1"
+        END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x0409,1200
+	END
+END
+#endif
