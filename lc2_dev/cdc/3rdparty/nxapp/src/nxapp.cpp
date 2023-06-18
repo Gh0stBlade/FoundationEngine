@@ -167,6 +167,11 @@ void nx::app::OpenLog()
 
 }
 
+const std::wstring& nx::app::GetGameName()
+{
+    return s_GameName;
+}
+
 std::wstring* nx::widen(std::wstring* result, const char* text, unsigned int length)
 {
     int len;

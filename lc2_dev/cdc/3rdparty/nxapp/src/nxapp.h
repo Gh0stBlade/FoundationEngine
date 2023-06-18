@@ -19,6 +19,7 @@ namespace nx
 		static bool InitializeVersion(HINSTANCE instance);
 		static void SetGameProperties(const wchar_t* gameName, int versionMajor, int versionMinor, int versionBuildMajor, int versionBuildMinor);
 		static void OpenLog();
+		static const std::wstring& GetGameName();
 	};
 }
 
