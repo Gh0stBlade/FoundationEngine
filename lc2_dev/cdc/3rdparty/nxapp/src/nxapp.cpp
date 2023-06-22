@@ -172,6 +172,22 @@ const std::wstring& nx::app::GetGameName()
     return s_GameName;
 }
 
+void nx::app::Destroy()
+{
+    if (s_initialized)
+    {
+        s_initialized = false;
+
+        //nx::Log::Log("[Render] Destroying NxApp");
+
+        //SystemParametersInfoW(SPI_SETSTICKYKEYS, sizeof(STICKYKEYS), &s_StartupStickKeys, SPIF_SENDWININICHANGE);
+        //SystemParametersInfoW(SPI_SETMOUSETRAILS, s_nStartupMouseTrails, nullptr, 0);
+        //SystemParametersInfoW(SPI_SETMOUSESONAR, 0, s_bStartupMouseSonar, 0);
+
+        //nx::Log::Close();
+    }
+}
+
 std::wstring* nx::widen(std::wstring* result, const char* text, unsigned int length)
 {
     int len;
