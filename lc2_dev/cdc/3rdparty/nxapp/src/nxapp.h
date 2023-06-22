@@ -20,6 +20,7 @@ namespace nx
 		static void SetGameProperties(const wchar_t* gameName, int versionMajor, int versionMinor, int versionBuildMajor, int versionBuildMinor);
 		static void OpenLog();
 		static const std::wstring& GetGameName();
+		static const std::string& GetBuildString();
 		static void Destroy();
 	};
 }

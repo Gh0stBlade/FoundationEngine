@@ -172,6 +172,11 @@ const std::wstring& nx::app::GetGameName()
     return s_GameName;
 }
 
+const std::string& nx::app::GetBuildString()
+{
+    return s_BuildString;
+}
+
 void nx::app::Destroy()
 {
     if (s_initialized)
