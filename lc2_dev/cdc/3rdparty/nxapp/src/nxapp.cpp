@@ -5,6 +5,8 @@
 
 bool s_initialized = false;
 
+bool s_SteamBigPictureModeActive = false;
+
 std::wstring s_GameName;
 
 int s_BuildIdentifier;
@@ -175,6 +177,11 @@ const std::wstring& nx::app::GetGameName()
 const std::string& nx::app::GetBuildString()
 {
     return s_BuildString;
+}
+
+bool nx::app::IsSteamBigPictureModeActive()
+{
+    return s_SteamBigPictureModeActive;
 }
 
 void nx::app::Destroy()

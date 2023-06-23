@@ -21,6 +21,7 @@ namespace nx
 		static void OpenLog();
 		static const std::wstring& GetGameName();
 		static const std::string& GetBuildString();
+		static bool IsSteamBigPictureModeActive();
 		static void Destroy();
 	};
 }
