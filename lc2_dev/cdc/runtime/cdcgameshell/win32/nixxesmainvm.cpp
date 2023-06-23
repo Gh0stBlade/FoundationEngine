@@ -22,6 +22,35 @@ int NxMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char* lpCmdLine)
 
 	ParseCommandLine(lpCmdLine);
 
+	bool bValue[4];
+	bValue[0] = false;
+
+	bool bDefault = true;
+
+	//nx::settingsmanager::Load("FirstRun", SETTING_CATEGORY_NONE, bValue, &bDefault);
+	//nx::DisplaySettings displaySettings();
+
+	if (bValue[0])
+	{
+		//nx::settingsmanager::Save(&displaySettings);
+
+		//cdc::NixxesActionMapper::ResetDefaultMapping();
+		//cdc::NixxesActionMapper::SaveMapping();
+
+		//nx::settingsmanager::Save("FirstRun", SETTING_CATEGORY_NONE, 0);
+	}
+	else
+	{
+		//nx::settingsmanager::Load(&displaySettings);
+	}
+
+	bool bigPictureModeActive = nx::app::IsSteamBigPictureModeActive();
+
+	//bool fullscreen = displaySettings.m_bFullscreen;
+	//displaySettings.m_bFullscreen = bigPictureModeActive ? true : fullscreen;
+
+	//ApplyNxSettingsToCDCSettings(&displaySettings, &((cdc::PCGameShell*)cdc::GameShell::s_gameShell)->deviceSettings);
+
 	return ERROR_SUCCESS;
 }
 
