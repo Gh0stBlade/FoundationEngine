@@ -5,6 +5,8 @@
 
 bool s_initialized = false;
 
+bool s_SteamBigPictureModeActive = false;
+
 std::wstring s_GameName;
 
 int s_BuildIdentifier;
@@ -170,6 +172,32 @@ void nx::app::OpenLog()
 const std::wstring& nx::app::GetGameName()
 {
     return s_GameName;
+}
+
+const std::string& nx::app::GetBuildString()
+{
+    return s_BuildString;
+}
+
+bool nx::app::IsSteamBigPictureModeActive()
+{
+    return s_SteamBigPictureModeActive;
+}
+
+void nx::app::Destroy()
+{
+    if (s_initialized)
+    {
+        s_initialized = false;
+
+        //nx::Log::Log("[Render] Destroying NxApp");
+
+        //SystemParametersInfoW(SPI_SETSTICKYKEYS, sizeof(STICKYKEYS), &s_StartupStickKeys, SPIF_SENDWININICHANGE);
+        //SystemParametersInfoW(SPI_SETMOUSETRAILS, s_nStartupMouseTrails, nullptr, 0);
+        //SystemParametersInfoW(SPI_SETMOUSESONAR, 0, s_bStartupMouseSonar, 0);
+
+        //nx::Log::Close();
+    }
 }
 
 std::wstring* nx::widen(std::wstring* result, const char* text, unsigned int length)

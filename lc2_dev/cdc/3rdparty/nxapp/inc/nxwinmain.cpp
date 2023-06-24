@@ -1,4 +1,5 @@
 #include "../src/nxapp.h"
+#include "../../../runtime/cdcgameshell/win32/mainvm.h"
 
 #include <windows.h>
 
@@ -8,6 +9,10 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	{
 		exit(EXIT_FAILURE);
 	}
+
+	NxMain(hInstance, hPrevInstance, lpCmdLine);
+
+	nx::app::Destroy();
 
 	return ERROR_SUCCESS;
 }
