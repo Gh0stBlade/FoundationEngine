@@ -1,5 +1,8 @@
 #pragma once
 
+#include "../cdcsys/list.h"
+#include "updateloopcallback.h"
+
 namespace cdc
 {
 	class GameShell
@@ -15,7 +18,7 @@ namespace cdc
 		bool m_bStartingPeerFromCmdLine;
 		bool m_finishedLoading;
 		bool m_garbageCollectNextFrame;
-		//cdc::List<cdc::UpdateLoopCallback*> m_updateCallbackList;
+		cdc::List<cdc::UpdateLoopCallback*> m_updateCallbackList;
 		int m_preferredController;
 		bool m_useArgfile;
 		char m_argfile[256];
