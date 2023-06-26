@@ -10,13 +10,6 @@ int NxMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char* lpCmdLine)
 
 	cdc::PCGameShell* gameShell = new cdc::PCGameShell();
 
-	///@TODO
-	/*cdc::PCSettings::PCSettings(&gameShell->deviceSettings);*/
-	gameShell->m_appTerminateDelay = 0;
-	gameShell->m_quitTime = 0;
-	gameShell->m_aspectRatio = -1.f;
-	gameShell->m_aspectRatioEyefinityIgnored = -1.f;
-
 	cdc::GameShell::s_gameShell = gameShell;
 	gameShell->m_finishedLoading = false;
 
@@ -56,4 +49,13 @@ int NxMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char* lpCmdLine)
 
 void ParseCommandLine(char* lpCmdLine)
 {
+}
+
+cdc::PCGameShell::PCGameShell()
+	: GameShell(), deviceSettings()
+{
+	this->m_appTerminateDelay = 0;
+	this->m_quitTime = 0;
+	this->m_aspectRatio = -1.f;
+	this->m_aspectRatioEyefinityIgnored = -1.f;
 }
