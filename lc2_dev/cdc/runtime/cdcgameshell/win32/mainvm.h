@@ -13,6 +13,8 @@ namespace cdc
 	class PCGameShell : public cdc::GameShell
 	{
 	public:
+		PCGameShell();
+
 		unsigned int dontPauseOnFocusLoss;
 		unsigned int dontSleepOnFocusLoss;
 
